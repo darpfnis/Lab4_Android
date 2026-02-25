@@ -1,109 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:id="@+id/drawer_layout"
-
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
-
     android:background="#0F0F0F">
-
-
 
     <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp">
 
-
-
         <ImageButton android:id="@+id/btnMenu" android:layout_width="48dp" android:layout_height="48dp"
-
             android:src="@android:drawable/ic_menu_sort_by_size" android:background="@android:color/transparent" app:tint="#F2FF00" />
 
-
-
         <TextView android:id="@+id/mainTitle" android:layout_width="wrap_content" android:layout_height="wrap_content"
-
             android:layout_centerHorizontal="true" android:layout_marginTop="60dp"
-
             android:text="MUSIC LIBRARY" android:textColor="#F2FF00" android:textSize="24sp" android:fontFamily="serif-monospace" />
 
-
-
         <androidx.media3.ui.PlayerView android:id="@+id/videoPlayerView"
-
             android:layout_width="match_parent" android:layout_height="220dp"
-
             android:layout_below="@id/mainTitle" android:layout_marginTop="10dp"
-
             android:visibility="gone" android:background="#000" app:use_controller="false" />
 
-
-
         <ListView android:id="@+id/mediaListView" android:layout_width="match_parent" android:layout_height="match_parent"
-
             android:layout_above="@+id/miniPlayer" android:layout_below="@id/videoPlayerView"
-
             android:layout_marginTop="10dp" android:divider="#33FFFFFF" android:dividerHeight="1dp" />
 
-
-
         <LinearLayout android:id="@+id/miniPlayer" android:layout_width="match_parent" android:layout_height="wrap_content"
-
             android:layout_alignParentBottom="true" android:background="#1A1A1A" android:padding="8dp"
-
             android:orientation="vertical" android:visibility="gone">
 
-
-
             <SeekBar android:id="@+id/playerSeekBar" android:layout_width="match_parent" android:layout_height="wrap_content"
-
                 android:progressTint="#F2FF00" android:thumbTint="#F2FF00" />
 
-
-
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-
                 <ImageButton android:id="@+id/btnPlayPause" android:layout_width="55dp" android:layout_height="55dp"
-
                     android:src="@android:drawable/ic_media_play" app:tint="#F2FF00" android:background="@android:color/transparent"/>
-
                 <TextView android:id="@+id/currentTrackName" android:layout_width="0dp" android:layout_weight="1"
-
                     android:layout_height="wrap_content" android:layout_marginStart="10dp" android:text="Select track..." android:textColor="#FFF" android:singleLine="true" />
-
                 <ImageButton android:id="@+id/btnStop" android:layout_width="45dp" android:layout_height="45dp"
-
                     android:src="@android:drawable/ic_menu_close_clear_cancel" app:tint="#FF4444" android:background="@android:color/transparent"/>
-
             </LinearLayout>
-
         </LinearLayout>
-
     </RelativeLayout>
 
-
-
     <com.google.android.material.navigation.NavigationView android:id="@+id/nav_view" android:layout_width="wrap_content"
-
         android:layout_height="match_parent" android:layout_gravity="start" android:background="#1A1A1A">
-
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="PLAYER MENU" android:textColor="#F2FF00" android:textSize="18sp" android:layout_marginBottom="20dp"/>
-
             <Button android:id="@+id/menuAudio" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Music" android:backgroundTint="#333" android:textColor="#FFF" android:layout_marginBottom="8dp"/>
-
-            <Button android:id="@+id/menuVideo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Videos" android:backgroundTint="#333" android:textColor="#FFF" android:layout_marginBottom="20dp"/>
-
+            <Button android:id="@+id/menuVideo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Videos" android:backgroundTint="#333" android:textColor="#FFF" android:layout_marginBottom="8dp"/>
+            <Button android:id="@+id/menuPlaylists" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Playlists" android:backgroundTint="#333" android:textColor="#F2FF00" android:layout_marginBottom="20dp"/>
             <Button android:id="@+id/menuAddFile" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="+ From Storage" android:backgroundTint="#9D00FF" android:textColor="#FFF" android:layout_marginBottom="8dp"/>
-
             <Button android:id="@+id/menuAddWeb" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="+ From Link" android:backgroundTint="#9D00FF" android:textColor="#FFF"/>
-
         </LinearLayout>
-
     </com.google.android.material.navigation.NavigationView>
-
 </androidx.drawerlayout.widget.DrawerLayout>
